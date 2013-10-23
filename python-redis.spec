@@ -1,13 +1,13 @@
 %define module redis
 
-Name:           python-%module
-Version:        2.7.2
-Release:        %mkrel 1
+Name:           python-%{module}
+Version:        2.7.6
+Release:        1
 Summary:        Python client for Redis key-value store
 License:        MIT
 Group:          Development/Python
 Url:            http://github.com/andymccurdy/redis-py/
-Source0:        http://cloud.github.com/downloads/andymccurdy/redis-py/%module-%{version}.tar.gz
+Source0:        http://cloud.github.com/downloads/andymccurdy/redis-py/redis-py-%{version}.tar.gz
 BuildRequires:  python-devel
 BuildArch:      noarch
 
@@ -15,14 +15,15 @@ BuildArch:      noarch
 Python client for Redis key-value store
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{module}-py-%{version}
 
 %build
 CFLAGS="%{optflags}" python setup.py build
 
 %install
-%{__python} setup.py install --root %{buildroot} --install-purelib=%{python_sitelib}
+%{__python} setup.py install --root %{buildroot} --install-purelib=%{py_puresitedir}
 
 %files
-%doc LICENSE CHANGES README.md INSTALL
-%{python_sitelib}/*
+%doc LICENSE CHANGES INSTALL
+%{py_puresitedir}/*
+

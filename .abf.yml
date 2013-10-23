@@ -1,3 +1,2 @@
 sources:
-  "redis-2.2.2.tar.bz2": a26907659121810d380a1149f28bd8a37925da16
-  redis-2.7.2.tar.gz: 6722aea98d33cb09c2d933be609fa3ed61fc455c
+  redis-py-2.7.6.tar.gz: 4979a4e9df3bdad6ab2dc48c9b7373906994a356
