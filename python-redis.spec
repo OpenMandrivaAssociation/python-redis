@@ -1,7 +1,7 @@
 %define module redis
 
 Name:           python-%{module}
-Version:        2.7.6
+Version:        2.9.1
 Release:        1
 Summary:        Python client for Redis key-value store
 License:        MIT
@@ -21,9 +21,10 @@ Python client for Redis key-value store
 CFLAGS="%{optflags}" python setup.py build
 
 %install
-%{__python} setup.py install --root %{buildroot} --install-purelib=%{py_puresitedir}
+python setup.py install --root %{buildroot} --install-purelib=%{py_puresitedir}
 
 %files
 %doc LICENSE CHANGES INSTALL
 %{py_puresitedir}/*
+
 
