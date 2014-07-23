@@ -1,4 +1,5 @@
 removed_sources:
   redis-py-2.7.6.tar.gz: 4979a4e9df3bdad6ab2dc48c9b7373906994a356
-sources:
   redis-py-2.9.1.tar.gz: d1e6dcc0492552933db9c35bd07c556fdd70416e
+sources:
+  redis-py-2.10.1.tar.gz: 3b17877ef243ff60a18ee4c3046064d252f1061b
