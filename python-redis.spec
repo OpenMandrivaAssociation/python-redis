@@ -1,7 +1,7 @@
 %define module redis
 
 Name:           python-%{module}
-Version:        2.10.1
+Version:        2.10.3
 Release:        1
 Summary:        Python client for Redis key-value store
 License:        MIT
