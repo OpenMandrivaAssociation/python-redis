@@ -1,28 +1,47 @@
 %define module redis
 
-Name:           python-%{module}
-Version:        2.10.3
-Release:        2
+Name:           python-%module
+Version:        3.3.8
+Release:        1
 Summary:        Python client for Redis key-value store
 License:        MIT
 Group:          Development/Python
 Url:            http://github.com/andymccurdy/redis-py/
-Source0:        http://cloud.github.com/downloads/andymccurdy/redis-py/redis-py-%{version}.tar.gz
-BuildRequires:  python-devel
+Source0:	https://github.com/andymccurdy/redis-py/archive/%{version}.tar.gz
+BuildRequires:  python
+BuildRequires:  python2-setuptools
 BuildArch:      noarch
+Provides: python-redis-py = %{version}-%{release}
+Obsoletes: python-redis-py < 3
 
 %description
+Python client for Redis key-value store
+
+%package -n python2-%{module}
+Summary:        Python client for Redis key-value store
+BuildRequires:	python2
+BuildRequires:  python2-setuptools
+Provides: python2-redis-py = %{version}-%{release}
+Obsoletes: python2-redis-py < 3
+
+%description -n python2-%{module}
 Python client for Redis key-value store
 
 %prep
 %setup -q -n %{module}-py-%{version}
 
 %build
-CFLAGS="%{optflags}" python setup.py build
+%py2_build
+%py3_build
 
 %install
-python setup.py install --root %{buildroot} --install-purelib=%{py_puresitedir}
+%{__python} setup.py install --root %{buildroot} --install-purelib=%{python_sitelib}
+%{__python2} setup.py install --root %{buildroot} --install-purelib=%{python2_sitelib}
 
 %files
-%doc LICENSE CHANGES INSTALL
-%{py_puresitedir}/*
+%doc LICENSE CHANGES README.rst INSTALL
+%{python_sitelib}/*
+
+%files -n python2-%{module}
+%doc LICENSE CHANGES README.rst INSTALL
+%{python2_sitelib}/*
