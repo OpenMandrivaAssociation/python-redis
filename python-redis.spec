@@ -10,6 +10,7 @@ Url:            http://github.com/andymccurdy/redis-py/
 Source0:	https://github.com/andymccurdy/redis-py/archive/%{version}.tar.gz
 BuildRequires:  python
 BuildRequires:  python2-setuptools
+BuildRequires:  python-setuptools
 BuildRequires:  python2-pkg-resources
 BuildArch:      noarch
 Provides: python-redis-py = %{version}-%{release}
