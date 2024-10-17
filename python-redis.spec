@@ -6,7 +6,7 @@ Release:	2
 Summary:        Python client for Redis key-value store
 License:        MIT
 Group:          Development/Python
-Url:            http://github.com/andymccurdy/redis-py/
+Url:            https://github.com/andymccurdy/redis-py/
 Source0:	https://github.com/andymccurdy/redis-py/archive/%{version}.tar.gz
 BuildRequires:  python
 BuildRequires:  python2-setuptools
