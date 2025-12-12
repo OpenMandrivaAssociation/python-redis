@@ -2,7 +2,7 @@
 
 Name:           python-%module
 Version:	3.3.11
-Release:	2
+Release:	3
 Summary:        Python client for Redis key-value store
 License:        MIT
 Group:          Development/Python
