@@ -10,7 +10,7 @@ Url:            https://github.com/andymccurdy/redis-py/
 Source0:	https://github.com/redis/redis-py/archive/refs/tags/v%{version}.tar.gz
 BuildSystem:	python
 BuildRequires:  python
-BuildRequires:  python%{pyver}dist(setuptools)
+BuildRequires:  python%{pyver}dist(hatchling)
 BuildArch:      noarch
 
 %description
